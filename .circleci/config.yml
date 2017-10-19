@@ -9,7 +9,7 @@ jobs:
       - run: make -j 8
       - run: |
           ulimit -c unlimited
-          ./OpenMP_HelloWorld
+          ./SimpleCudaC
       - run:
           command: |
             mkdir -p /tmp/core_dumps

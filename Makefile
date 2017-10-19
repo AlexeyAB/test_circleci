@@ -1,11 +1,11 @@
-OpenMP_HelloWorld : main.o
-	gcc -lm -O3 -lgomp -o OpenMP_HelloWorld main.o
+SimpleCudaC : main.o
+	nvcc -O3 -arch=sm_20 -lcuda -o  SimpleCudaC main.o
 		 
 
-gcc = gcc -O3 -fopenmp -c
+nvcc = nvcc --machine 64 -O3 -arch=sm_20 -c
 
-main.o : main.c
-	$(gcc) main.c
+main.o : main.cu
+	$(nvcc) main.cu
 
 
 clean : 
