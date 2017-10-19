@@ -2,7 +2,7 @@ version: 2.0
 jobs:
   build:
     docker:
-      - image: gcc:latest
+      - image: gerey/circleci-cuda-image:latest
     working_directory: ~/work
     steps:
       - checkout
